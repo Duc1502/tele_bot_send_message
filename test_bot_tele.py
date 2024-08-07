@@ -6,7 +6,7 @@ from telegram.constants import ParseMode  # Đảm bảo nhập ParseMode đúng
 CHANNEL_CHAT_ID_1 = '-1002197950564'
 CHANNEL_CHAT_ID_2 = '-1002200973439'
 
-BOT_TOKEN = os.getenv('7102160257:AAGVclfBkHC_8I3TZynCjqO-t1i70ymTb50')
+BOT_TOKEN = os.getenv('TOKEN')
 
 LINK_1 = 'https://broker-qx.pro/sign-up/?lid=905982'
 LINK_2 = 'https://broker-qx.pro/sign-up/?lid=897767'
