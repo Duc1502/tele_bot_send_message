@@ -14,7 +14,7 @@ icon = "📲"
 icon2 = "🙋"
 
 LINK_1 = 'https://broker-qx.pro/sign-up/?lid=905982'
-LINK_2 = 'https://broker-qx.pro/sign-up/?lid=897767'
+LINK_2 = 'https://broker-qx.pro/sign-up/?lid=986770'
 
 LINK_TUT_1 = 'https://t.me/QuotexSignalFreeWillTurner/64'
 LINK_TUT_2 = 'https://t.me/VictoryTraderQuotexSignal/55'
