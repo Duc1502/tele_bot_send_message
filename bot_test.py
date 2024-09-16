@@ -5,12 +5,10 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, fil
 from telegram.constants import ParseMode
 from datetime import datetime
 
-CHANNEL_CHAT_ID_1 = '-1002197950564'
-CHANNEL_CHAT_ID_2 = '-1002200973439'
-CHANNEL_CHAT_ID_3 = '-1002176480053'
-CHANNEL_CHAT_ID_VIP = '-1002246751402'
+CHANNEL_CHAT_ID_1 = '-1002148849708'
+CHANNEL_CHAT_ID_2 = '-1002192763533'
 
-BOT_TOKEN = '7102160257:AAGVclfBkHC_8I3TZynCjqO-t1i70ymTb50'
+BOT_TOKEN = '7022122709:AAEBPyORxPeDz69FeTop-TekRIWVzhjzM7w'
 
 icon = "📲"
 icon2 = "🙋"
@@ -45,7 +43,7 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     start_time_morning = datetime.strptime("10:00", "%H:%M").time()
     end_time_morning = datetime.strptime("12:00", "%H:%M").time()
 
-    start_time_afternoon = datetime.strptime("16:00", "%H:%M").time()
+    start_time_afternoon = datetime.strptime("15:00", "%H:%M").time()
     end_time_afternoon = datetime.strptime("18:00", "%H:%M").time()
 
     if update.message.text:
@@ -74,8 +72,6 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
         # Gửi tin nhắn vào kênh 2 và 3 bất kể số lượng tin nhắn
         await context.bot.send_message(chat_id=CHANNEL_CHAT_ID_1, text=stored_message_channel_1, parse_mode=ParseMode.MARKDOWN_V2, disable_web_page_preview=True)
-        await context.bot.send_message(chat_id=CHANNEL_CHAT_ID_3, text=stored_message_channel_3, parse_mode=ParseMode.MARKDOWN_V2, disable_web_page_preview=True)
-        await context.bot.send_message(chat_id=CHANNEL_CHAT_ID_VIP, text=stored_message_channel_VIP, parse_mode=ParseMode.MARKDOWN_V2, disable_web_page_preview=True)
 
     elif update.message.sticker:
         # Lấy thông tin sticker từ tin nhắn của người dùng
@@ -92,8 +88,6 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
                 message_count_afternoon += 1
 
         await context.bot.send_sticker(chat_id=CHANNEL_CHAT_ID_1, sticker=sticker.file_id)
-        await context.bot.send_sticker(chat_id=CHANNEL_CHAT_ID_3, sticker=sticker.file_id)
-        await context.bot.send_sticker(chat_id=CHANNEL_CHAT_ID_VIP, sticker=sticker.file_id)
 
     elif update.message.photo:
         # Xử lý ảnh chụp màn hình
@@ -124,8 +118,6 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
             with open(temp_file_path, 'rb') as image_file:
                 await context.bot.send_photo(chat_id=CHANNEL_CHAT_ID_1, photo=image_file, caption=caption)
-                await context.bot.send_photo(chat_id=CHANNEL_CHAT_ID_3, photo=image_file, caption=caption)
-                await context.bot.send_photo(chat_id=CHANNEL_CHAT_ID_VIP, photo=image_file, caption=caption)
         finally:
             os.remove(temp_file_path)
 
