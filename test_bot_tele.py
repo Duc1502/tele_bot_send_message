@@ -63,12 +63,12 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         # Kiểm tra thời gian hiện tại
         if start_time_morning <= current_time <= end_time_morning:
             
-            if message_count_morning < 7:
+            if message_count_morning < 6:
                 await context.bot.send_message(chat_id=CHANNEL_CHAT_ID_2, text=stored_message_channel_2, parse_mode=ParseMode.MARKDOWN_V2, disable_web_page_preview=True)
                 message_count_morning += 1
             
         elif start_time_afternoon <= current_time <= end_time_afternoon:  
-            if message_count_afternoon < 7:
+            if message_count_afternoon < 6:
                 await context.bot.send_message(chat_id=CHANNEL_CHAT_ID_2, text=stored_message_channel_2, parse_mode=ParseMode.MARKDOWN_V2, disable_web_page_preview=True)
                 message_count_afternoon += 1 
 
@@ -82,12 +82,12 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         sticker = update.message.sticker
 
         if start_time_morning <= current_time <= end_time_morning:
-            if message_count_morning < 7:
+            if message_count_morning < 6:
                 await context.bot.send_sticker(chat_id=CHANNEL_CHAT_ID_2, sticker=sticker.file_id)
                 message_count_morning += 1
 
         elif start_time_afternoon <= current_time <= end_time_afternoon:
-            if message_count_afternoon < 7:
+            if message_count_afternoon < 6:
                 await context.bot.send_sticker(chat_id=CHANNEL_CHAT_ID_2, sticker=sticker.file_id)
                 message_count_afternoon += 1
 
@@ -111,13 +111,13 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
         try:
             if start_time_morning <= current_time <= end_time_morning:
-                if message_count_morning < 7:
+                if message_count_morning < 6:
                     with open(temp_file_path, 'rb') as image_file:
                         await context.bot.send_photo(chat_id=CHANNEL_CHAT_ID_2, photo=image_file, caption=caption)
                     message_count_morning += 1
 
             elif start_time_afternoon <= current_time <= end_time_afternoon:
-                if message_count_afternoon < 7:
+                if message_count_afternoon < 6:
                     with open(temp_file_path, 'rb') as image_file:
                         await context.bot.send_photo(chat_id=CHANNEL_CHAT_ID_2, photo=image_file, caption=caption)
                     message_count_afternoon += 1
