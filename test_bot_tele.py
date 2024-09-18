@@ -20,7 +20,7 @@ LINK_2 = 'https://broker-qx.pro/sign-up/?lid=986770'
 
 LINK_TUT_1 = 'https://t.me/QuotexSignalFreeWillTurner/64'
 LINK_TUT_2 = 'https://t.me/VictoryTraderQuotexSignal/55'
-LINK_TUT_VIP = 'https://t.me/quotextrader_vip/5'
+LINK_TUT_VIP = 'https://t.me/quotextrader_vip/244'
 
 message_count_morning = 0
 message_count_afternoon = 0
@@ -117,7 +117,7 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
                     message_count_morning += 1
 
             elif start_time_afternoon <= current_time <= end_time_afternoon:
-                if message_count_afternoon < 6:
+                if message_count_afternoon < 7:
                     with open(temp_file_path, 'rb') as image_file:
                         await context.bot.send_photo(chat_id=CHANNEL_CHAT_ID_2, photo=image_file, caption=caption)
                     message_count_afternoon += 1
