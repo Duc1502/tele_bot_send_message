@@ -111,7 +111,7 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
         try:
             if start_time_morning <= current_time <= end_time_morning:
-                if message_count_morning < 6:
+                if message_count_morning < 7:
                     with open(temp_file_path, 'rb') as image_file:
                         await context.bot.send_photo(chat_id=CHANNEL_CHAT_ID_2, photo=image_file, caption=caption)
                     message_count_morning += 1
