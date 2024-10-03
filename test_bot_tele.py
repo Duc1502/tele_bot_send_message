@@ -42,11 +42,11 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
     current_time = datetime.now().time()
 
-    start_time_morning = datetime.strptime("10:00", "%H:%M").time()
+    start_time_morning = datetime.strptime("9:00", "%H:%M").time()
     end_time_morning = datetime.strptime("12:00", "%H:%M").time()
 
     start_time_afternoon = datetime.strptime("16:00", "%H:%M").time()
-    end_time_afternoon = datetime.strptime("18:00", "%H:%M").time()
+    end_time_afternoon = datetime.strptime("20:00", "%H:%M").time()
 
     if update.message.text:
         user_message = update.message.text
